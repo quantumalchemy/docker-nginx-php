@@ -2,7 +2,7 @@
 Docker Nginx + PHP-FPM on Alpine Linux
 ==============================================
 Nginx Latest + PHP-FPM Latest setup for Docker, build on [Alpine Linux](http://www.alpinelinux.org/).
-The image is only +/- 35MB.
+The image is very small +/- 35MB.
 
 Usage
 -----
