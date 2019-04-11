@@ -1,4 +1,3 @@
-
 FROM alpine:latest
 LABEL Maintainer="scriptgurus <code@scriptgurus.com>" \
       Description="Lightweight container with Nginx 1.12 & PHP-FPM 7.1 based on Alpine Linux."
@@ -11,8 +10,6 @@ RUN apk --update --no-cache --virtual add nginx php7 php7-fpm php7-mysqli php7-j
 
 # Configure nginx 
 COPY config/nginx.conf /etc/nginx/nginx.conf
-# ssl
-COPY config/ssl /etc/nginx
 
 # Configure PHP-FPM
 COPY config/fpm-pool.conf /etc/php7/php-fpm.d/zzz_custom.conf
@@ -20,6 +17,10 @@ COPY config/php.ini /etc/php7/conf.d/zzz_custom.ini
 
 # Configure supervisord
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# ssl
+RUN mkdir -p /ssl
+COPY config/ssl /ssl
 
 # Add application
 RUN mkdir -p /var/www/html
