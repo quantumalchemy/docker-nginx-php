@@ -11,8 +11,8 @@ RUN apk --update --no-cache --virtual add nginx php7 php7-fpm php7-mysqli php7-j
 
 # Configure nginx 
 COPY config/nginx.conf /etc/nginx/nginx.conf
-COPY config/localhost.com.crt /etc/nginx/localhost.com.crt
-COPY config/localhost.com.key /etc/nginx/localhost.com.key
+# ssl
+COPY config/ssl /etc/nginx
 
 # Configure PHP-FPM
 COPY config/fpm-pool.conf /etc/php7/php-fpm.d/zzz_custom.conf
