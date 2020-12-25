@@ -26,6 +26,9 @@ COPY config/ssl /ssl
 RUN mkdir -p /var/www/html
 WORKDIR /var/www/html
 COPY html /var/www/html
+RUN groupadd -g 1000 ec2-user && \    
+    useradd -u 1000 -g ec2-user -m ec2-user -G docker_env && \   
+    usermod -p "*" ec2-user
 
 EXPOSE 80 443
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
