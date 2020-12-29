@@ -1,14 +1,9 @@
 
-# docker build -t nginx:latest .
-# TEST docker run -d --name nginx --network nginx --restart always -e USER=jec -p 80:8080 -p 443:8443 -v /home/jec/server:/var/www/html nginx
-# docker run -d --name nginx --network nginx --restart always -e USER=jec -p 80:8080 -p 443:8443 -v /home/jec/html:/var/www/html -v /home/jec/docker/site/config/nginx.conf:/etc/nginx/nginx.conf -v /home/jec/docker/site/config/ssl:/ssl nginx
-# chown -R jec /var/www/html
-# chown -R jec /home/jec/server
 FROM alpine:3.11
 
 ENV USER jec
 
-LABEL Maintainer="Jabar Digital Service <digital.service@jabarprov.go.id>" \
+LABEL Maintainer="quantumalchemy <info@quantumalchemy.net>" \
       Description="Lightweight container with Nginx 1.16 & PHP-FPM 7.4 based on Alpine Linux (forked from trafex/alpine-nginx-php7)."
 
 ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
