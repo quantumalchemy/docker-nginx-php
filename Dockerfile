@@ -1,7 +1,7 @@
 
 FROM alpine:3.11
 
-ENV USER jec
+ENV USER ec2-user
 
 LABEL Maintainer="quantumalchemy <info@quantumalchemy.net>" \
       Description="Lightweight container with Nginx 1.16 & PHP-FPM 7.4 based on Alpine Linux (forked from trafex/alpine-nginx-php7)."
