@@ -11,8 +11,9 @@ ie:  -e USER=ec2-user * for use with AWS ec2-user
 
 Usage
 -----
-Start the Docker container:
-
-    docker run -p 80:8080 -p 443:8443 -v /path-to-your/html:/var/www/html -v /path-to-your/ssl:/ssl -e USER=user github.com/quantumalchemy/docker-nginx-php
+Docker Pull Command: docker pull scriptgurus/nginx-php
+Or
+Run from hub.docker.com -> https://hub.docker.com/repository/docker/scriptgurus/nginx-php
+docker run -p 80:8080 -p 443:8443 -v /path-to-your/html:/var/www/html -v /path-to-your/ssl:/ssl -e USER=user scriptgurus/nginx-php:latest
 
 
