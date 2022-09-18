@@ -8,6 +8,7 @@ The image is very small +/- 35MB.
 RUN NGINX as any non privileged USER for better security / Update wordpress & plugins without changing file owner & permissions. **
 ie:  -e USER=ec2-user * for use with AWS ec2-user 
 ## 12/29/2020 added Nginx Support for WordPress Multisite Network
+## 09/17/2022 Updated Alpine 3.16.2, php 8.1
 
 Usage
 -----
